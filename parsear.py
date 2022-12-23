@@ -46,6 +46,12 @@ def Explorar():
                             config.clear()
         b_explorar['text'] = "LISTO!"                
         mensaje.set("DONE! Ya puedes cerrar la ventana")
+        os.remove(os.path.join(os.getcwd(), "convertir.cmd"))
+        os.remove(os.path.join(os.getcwd(), "input.csv"))
+        os.remove(os.path.join(os.getcwd(), "output1.csv"))
+        os.remove(os.path.join(os.getcwd(), "output2.csv"))
+        os.remove(os.path.join(os.getcwd(), "output3.csv"))
+        os.remove(os.path.join(os.getcwd(), "parchar.cmd"))
 
 #///////////////////////////////////////////////////////////////////////////////////////
 def listToString(s):
@@ -68,9 +74,8 @@ def cambiarMidi(pat, mi):
     f = open("convertir.cmd","w+")
     f.write('"' + os.getcwd() + '\midicsv-1.1\Midicsv.exe"' + ' "' + os.path.join(pat, mi) + '" ' + "> " + '"' + os.getcwd() + '\input.csv"')
     f.close()
-
     os.system("convertir.cmd")
-
+    
     text = open("input.csv", "r")
     text = ''.join([i for i in text]).replace("PART GUITAR GHL", "PART GUITAR") \
         .replace(", 0, 100, 100",", 0, 110, 100").replace(", 0, 100, 0",", 0, 110, 0") \
