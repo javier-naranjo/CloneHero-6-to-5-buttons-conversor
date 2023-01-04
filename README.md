@@ -5,6 +5,7 @@ This python code will help you converting your songs that only have
 charts that uses a Guitar Hero Live (6 fret guitar controller) into
 charts that uses the conventional Guitar Hero / Rock Band controller (5 fret: green, red, yellow, blue and orange). This only works
 for CloneHero charts with '.mid' format, and only modifies the "Expert" chart of the songs.
+***I made this specially to play the Guitar Hero TV (GHTV) setlist with a 5 fret guitar, because they are 519 amazing songs and I don't have a 6 fret guitar, actually I don't like it!**
 
 ## Screenshots
 
@@ -34,12 +35,26 @@ best option to have a nice gameplay, but you can change the assignment of the 'm
 the "94" note outside the range of a 5 fret chart, and the "96" number represents
 the red color in a 5 fret Guitar Hero Controller. You can replace the "96" for the midi note corresponding to the note color you think is the best if you
 want to change the code.
+
+**The thing you need to know is that if in the gamemplay we see an event where the 6th note and the red note are pressed at the same time, they will be one on top of the other.**
+
+Here we see the 6th note and the red one at the same time. One on top of the other.
+
+![one on top](https://user-images.githubusercontent.com/52630564/210464459-474c1bd3-f0b7-44e2-9842-4fc87ae8afb0.png)
+ 
+
 ## Installation
 
-You can see in this youtube video how to use this program.
-- [https://www.youtube.com/channel/UCnVJ0GgjLNpNJ8rov6tv6OQ](https://www.youtube.com/channel/UCnVJ0GgjLNpNJ8rov6tv6OQ)
+*** IT'S IMPORTANT TO HAVE THE FOLDER "midicsv-1.1" IN THE SAME DIRECTORY OF THE PROGRAM, OTHERWISE ALL THE CHARTS WILL BE WIPED (PLEASE WATCH THE YOUTUBE VIDEO BELOW)... IF YOU MAKE THIS MISTAKE IS NOT A BIG DEAL ANYWAYS, YOU CAN EXECUTE "rollback.exe" AND EVERYTHING WILL BE THE SAME AGAIN.***
 
-Good luck!
+You can see in this youtube video how to use this program.
+- [https://www.youtube.com/watch?v=XwHPXCSTVyU](https://www.youtube.com/watch?v=XwHPXCSTVyU)
+
+But it's easy since I have made a simple GUI.
+
+![GUI](https://user-images.githubusercontent.com/52630564/210463779-9d5da898-bd2a-4d85-b817-9dc1a4aca34c.png)
+
+Also, to undo all the changes in the folder you have selected, feel free to use the rollback.exe. This will undo all the convertion going back to the original 6 fret charts.
     
 ## Authors
 
