@@ -4,8 +4,8 @@
 This python code will help you converting your songs that only have
 charts that uses a Guitar Hero Live (6 fret guitar controller) into
 charts that uses the conventional Guitar Hero / Rock Band controller (5 fret: green, red, yellow, blue and orange). This only works
-for CloneHero charts with '.mid' format, and only modifies the "Expert" chart of the songs.
-***I made this specially to play the Guitar Hero TV (GHTV) setlist with a 5 fret guitar, because they are 519 amazing songs and I don't have a 6 fret guitar, actually I don't like it!**
+for CloneHero charts with '.mid' format, and works for every difficulty on each song.
+***I made this specially to play the Guitar Hero TV (GHTV) setlist with a 5 fret guitar, because they are 519 amazing songs and I don't have a 6 fret guitar, and actually I don't like it!**
 
 ## Screenshots
 
@@ -24,17 +24,9 @@ of the execution of the python script. The song is: "A-punk - Vampire Weekend"
 Since there is a button that is outside the range of a 5 fret guitar
 when we want to play a chart of 6 frets,
 I have decided to count that missing button as the red one. I think that was the 
-best option to have a nice gameplay, but you can change the assignment of the 'missing button' to another one in this part of the code.
+best option to have a nice gameplay, but you can change the assignment of the 'missing button' to another one.
 
-```python
-    text = open("output3.csv", "r")
-    text = ''.join([i for i in text]).replace(", 0, 94, 100",", 0, 96, 100").replace(", 0, 94, 0",", 0, 96, 0")
-    x = open("output2.csv","w")
-```
-
-the "94" note outside the range of a 5 fret chart, and the "96" number represents
-the red color in a 5 fret Guitar Hero Controller. You can replace the "96" for the midi note corresponding to the note color you think is the best if you
-want to change the code.
+![20230122_162820](https://user-images.githubusercontent.com/52630564/213943202-e6e66c75-ba74-4944-bfbb-144479bda4e4.jpg)
 
 **The thing you need to know is that if in the gamemplay we see an event where the 6th note and the red note are pressed at the same time, they will be one on top of the other.**
 

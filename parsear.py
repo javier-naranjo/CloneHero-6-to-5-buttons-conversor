@@ -88,7 +88,40 @@ def cambiarMidi(pat, mi):
         .replace(", 0, 110, 100",", 0, 98, 100").replace(", 0, 110, 0",", 0, 98, 0") \
         .replace(", 0, 109, 100",", 0, 97, 100").replace(", 0, 109, 0",", 0, 97, 0") \
         .replace(", 0, 108, 100",", 0, 96, 100").replace(", 0, 108, 0",", 0, 96, 0") \
-        .replace(", 0, 95, 100",", 0, 97, 100").replace(", 0, 95, 0",", 0, 97, 0")
+        .replace(", 0, 95, 100",", 0, 97, 100").replace(", 0, 95, 0",", 0, 97, 0") \
+        .replace(", 0, 88, 100",", 0, 110, 100").replace(", 0, 88, 0",", 0, 110, 0") \
+        .replace(", 0, 87, 100",", 0, 109, 100").replace(", 0, 87, 0",", 0, 109, 0") \
+        .replace(", 0, 86, 100",", 0, 108, 100").replace(", 0, 86, 0",", 0, 108, 0") \
+        .replace(", 0, 85, 100",", 0, 112, 100").replace(", 0, 85, 0",", 0, 112, 0") \
+        .replace(", 0, 84, 100",", 0, 111, 100").replace(", 0, 84, 0",", 0, 111, 0") \
+        .replace(", 0, 112, 100",", 0, 88, 100").replace(", 0, 112, 0",", 0, 88, 0") \
+        .replace(", 0, 111, 100",", 0, 87, 100").replace(", 0, 111, 0",", 0, 87, 0") \
+        .replace(", 0, 110, 100",", 0, 86, 100").replace(", 0, 110, 0",", 0, 86, 0") \
+        .replace(", 0, 109, 100",", 0, 85, 100").replace(", 0, 109, 0",", 0, 85, 0") \
+        .replace(", 0, 108, 100",", 0, 84, 100").replace(", 0, 108, 0",", 0, 84, 0") \
+        .replace(", 0, 83, 100",", 0, 85, 100").replace(", 0, 83, 0",", 0, 85, 0") \
+        .replace(", 0, 76, 100",", 0, 110, 100").replace(", 0, 76, 0",", 0, 110, 0") \
+        .replace(", 0, 75, 100",", 0, 109, 100").replace(", 0, 75, 0",", 0, 109, 0") \
+        .replace(", 0, 74, 100",", 0, 108, 100").replace(", 0, 74, 0",", 0, 108, 0") \
+        .replace(", 0, 73, 100",", 0, 112, 100").replace(", 0, 73, 0",", 0, 112, 0") \
+        .replace(", 0, 72, 100",", 0, 111, 100").replace(", 0, 72, 0",", 0, 111, 0") \
+        .replace(", 0, 112, 100",", 0, 76, 100").replace(", 0, 112, 0",", 0, 76, 0") \
+        .replace(", 0, 111, 100",", 0, 75, 100").replace(", 0, 111, 0",", 0, 75, 0") \
+        .replace(", 0, 110, 100",", 0, 74, 100").replace(", 0, 110, 0",", 0, 74, 0") \
+        .replace(", 0, 109, 100",", 0, 73, 100").replace(", 0, 109, 0",", 0, 73, 0") \
+        .replace(", 0, 108, 100",", 0, 72, 100").replace(", 0, 108, 0",", 0, 72, 0") \
+        .replace(", 0, 71, 100",", 0, 73, 100").replace(", 0, 71, 0",", 0, 73, 0") \
+        .replace(", 0, 64, 100",", 0, 110, 100").replace(", 0, 64, 0",", 0, 110, 0") \
+        .replace(", 0, 63, 100",", 0, 109, 100").replace(", 0, 63, 0",", 0, 109, 0") \
+        .replace(", 0, 62, 100",", 0, 108, 100").replace(", 0, 62, 0",", 0, 108, 0") \
+        .replace(", 0, 61, 100",", 0, 112, 100").replace(", 0, 61, 0",", 0, 112, 0") \
+        .replace(", 0, 60, 100",", 0, 111, 100").replace(", 0, 60, 0",", 0, 111, 0") \
+        .replace(", 0, 112, 100",", 0, 64, 100").replace(", 0, 112, 0",", 0, 64, 0") \
+        .replace(", 0, 111, 100",", 0, 63, 100").replace(", 0, 111, 0",", 0, 63, 0") \
+        .replace(", 0, 110, 100",", 0, 62, 100").replace(", 0, 110, 0",", 0, 62, 0") \
+        .replace(", 0, 109, 100",", 0, 61, 100").replace(", 0, 109, 0",", 0, 61, 0") \
+        .replace(", 0, 108, 100",", 0, 60, 100").replace(", 0, 108, 0",", 0, 60, 0") \
+        .replace(", 0, 59, 100",", 0, 61, 100").replace(", 0, 59, 0",", 0, 61, 0")
     x = open("output1.csv","w")
     x.writelines(text)
     x.close()
@@ -100,14 +133,16 @@ def cambiarMidi(pat, mi):
     for row in csv_file:
         count += 1
         try:
-            if row[4] == " 94" and row[2] == " Note_on_c":
-                inilist = [i.start() for i in re.finditer(",", listToString(row))]
-                l_orig.append(listToString(row))
-                l_camb.append(listToString(row)[:inilist[1]+1] + " System_exclusive, 8, 80, 83, 0, 0, 3, 1, 1, 247")
-            if row[4] == " 94" and row[2] == " Note_off_c":
-                inilist = [i.start() for i in re.finditer(",", listToString(row))]
-                l_orig.append(listToString(row))
-                l_camb.append(listToString(row)[:inilist[1]+1] + " System_exclusive, 8, 80, 83, 0, 0, 3, 1, 0, 247")
+            if row[4] == " 94" or row[4] == " 82" or row[4] == " 70" or row[4] == " 58":
+                if row[2] == " Note_on_c":
+                    inilist = [i.start() for i in re.finditer(",", listToString(row))]
+                    l_orig.append(listToString(row))
+                    l_camb.append(listToString(row)[:inilist[1]+1] + " System_exclusive, 8, 80, 83, 0, 0, 3, 1, 1, 247")
+            if row[4] == " 94" or row[4] == " 82" or row[4] == " 70" or row[4] == " 58":
+                if row[2] == " Note_off_c":
+                    inilist = [i.start() for i in re.finditer(",", listToString(row))]
+                    l_orig.append(listToString(row))
+                    l_camb.append(listToString(row)[:inilist[1]+1] + " System_exclusive, 8, 80, 83, 0, 0, 3, 1, 0, 247")
         except:
             pass
     
